@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajos - Blog de Páginas Web Vintage</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <img src="img/logo.png" alt="Logo Izquierda" class="logo1">
+        </div>
+        <h1>Trabajos</h1>
+        <div>
+            <img src="img/logo2.png" alt="Logo Derecha" class="logo1">
+            <button class="back-button" onclick="window.location.href='index.html'">Home</button>
+
+    </header>
+
+    <div class="carousel-containerT">
+        <div class="carouselT">
+            <img src="img/trabajo1.jpg" alt="Imagen 1">
+            <img src="img/trabajo2.jpg" alt="Imagen 2">
+            <img src="img/trabajo3.jpg" alt="Imagen 3">
+            <img src="img/trabajo4.jpg" alt="Imagen 3">
+            <img src="img/trabajo5.jpg" alt="Imagen 3">
+        </div>
+    </div>
+
+
+    <script>
+        const carousel = document.querySelector('.carouselT');
+        let scrollAmount = 0;
+
+        function startCarousel() {
+            setInterval(() => {
+                scrollAmount += 100;
+                if (scrollAmount > carousel.scrollWidth - carousel.clientWidth) {
+                    scrollAmount = 0;
+                }
+                carousel.style.transform = `translateX(-${scrollAmount}px)`;
+            }, 800); // Cambia 2000 a la cantidad de milisegundos entre cambios de imagen
+        }
+
+        startCarousel();
+    </script>
+</body>
+</html>
